@@ -64,7 +64,12 @@ while game:
             finish = True
             window.blit(lose2,(200,200))
             game_over = True
-        
+        if ball.rect.y > win_height+50 or ball.rect.y <0:
+            speed_y *= -1
+        if ball.rect.x>550:
+            finish = True
+            window.blit(lose1,(200,200))
+            game_over = True
         racket1.reset()
         racket2.reset()
         ball.reset()
